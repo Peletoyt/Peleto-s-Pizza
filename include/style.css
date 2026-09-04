@@ -1,0 +1,122 @@
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.body-login{
+  background-image: url("image/bg-image.gif");
+  background-size: calc(100% + 3px);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+/* container login */
+.container {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  transform: translateY(40.2%);
+
+  background-image: url("image/hand-unit.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  box-sizing: border-box;
+  padding: 135px 70px 80px 155px;
+}
+
+/* Forms */
+.form-login {
+  background-color: black;
+  position: absolute;
+  top: 18.8rem;
+  left: 21.7rem;
+  width: 41.2rem;
+  height: 37.7rem;
+}
+
+/* Campo de Entrada */
+
+.input-group {
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(100%);
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 27rem;
+  padding: 12px;
+  border: 5px solid #82D7A4;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  transition: 0.3s;
+  color: #82D7A4;
+  background-color: black;
+}
+
+.input-group input:focus {
+  border-color: #134724;
+}
+
+.form-login-label {
+  color: #82D7A4;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* ======================== */
+/* BOTÃO DE LOGIN */
+/* ======================== */
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  color: transparent;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-btn:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Links login */
+
+.links {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.links a {
+  color: #82D7A4;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  color: #134724;
+  text-decoration: underline;
+}
