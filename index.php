@@ -10,8 +10,8 @@
         <form class="form-login" action="login.php" method="POST">
 
                 <div class="input-group">
-                    <label for="usuario" class="form-login-label">e-mail</label>
-                    <input type="text" id="email" name="email" placeholder="Digite seu e-mail" required>
+                    <label for="email" class="form-login-label">e-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
                 </div>
 
                 <div class="input-group">
@@ -21,8 +21,7 @@
 
                 <button type="submit" class="login-btn">Entrar</button>
                 <div class="links">
-                    <a  href="#">Esqueceu a senha?</a>
-                    <a  href="#">Primeiro acesso</a>
+                    <a  href="cadastrarCliente.php">Primeiro acesso</a>
                 </div>
             </form>
     </div>

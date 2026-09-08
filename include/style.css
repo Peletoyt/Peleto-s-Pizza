@@ -1,16 +1,18 @@
 @import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css");
-body {
+* {
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  height: 100%;
 
   font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
+/* Inicio Login*/
+
 .body-login{
+  overflow: hidden;
+  height: 100%;
   background-image: url("image/bg-image.gif");
-  background-size: calc(100% + 3px);
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
@@ -22,11 +24,9 @@ body {
   width: 700px;
   height: 700px;
   transform: translateY(40.2%);
-
   background-image: url("image/hand-unit.png");
   background-size: cover;
   background-repeat: no-repeat;
-
   box-sizing: border-box;
   padding: 135px 70px 80px 155px;
 }
@@ -42,20 +42,17 @@ body {
 }
 
 /* Campo de Entrada */
-
 .input-group {
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
   transform: translateY(100%);
 }
-
 .input-group label {
   display: block;
   font-weight: bold;
   margin-bottom: 8px;
 }
-
 .input-group input {
   width: 27rem;
   padding: 12px;
@@ -67,11 +64,9 @@ body {
   color: #82D7A4;
   background-color: black;
 }
-
 .input-group input:focus {
   border-color: #134724;
 }
-
 .form-login-label {
   color: #82D7A4;
   font-size: 1.2rem;
@@ -79,44 +74,74 @@ body {
   display: block;
 }
 
-/* ======================== */
-/* BOTÃO DE LOGIN */
-/* ======================== */
-
+/* Botao de Login */
 .login-btn {
   width: 100%;
   padding: 14px;
   background: transparent;
-  color: transparent;
+  color: #82D7A4;
   border: none;
   border-radius: 10px;
+  border: 5px solid #82D7A4;
   font-weight: bold;
   font-size: 1.1rem;
   cursor: pointer;
   transition: background 0.3s;
-}
+  transform: translateY(250%);
 
+}
 .login-btn:hover {
-  background: rgba(0, 0, 0, 0.3);
+  border-color: #134724;
 }
 
 /* Links login */
-
 .links {
   display: flex;
   justify-content: center;
-  justify-content: space-between;
   margin-top: 15px;
 }
-
 .links a {
   color: #82D7A4;
   text-decoration: none;
   font-size: 0.9rem;
   transition: 0.3s;
 }
-
 .links a:hover {
   color: #134724;
   text-decoration: underline;
 }
+
+/* Fim Login */
+
+/* Inicio Cadastro */
+.logo-cadastro {
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.body-cadastro {
+  overflow: hidden;
+  height: 100%;
+  background-image: url("image/42929.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.form-group input, .form-group select {
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    color: #000;
+}
+
+/*Fim Cadastro*/

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 01-Set-2026 às 10:53
+-- Data de Criação: 07-Set-2026 às 03:01
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `agenda` (
 CREATE TABLE IF NOT EXISTS `user` (
   `cpf` varchar(11) NOT NULL,
   `nome` varchar(40) NOT NULL,
-  `senha` int(10) NOT NULL,
+  `senha` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL,
   `telefone` varchar(11) NOT NULL,
   `sexo` varchar(6) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`cpf`, `nome`, `senha`, `email`, `telefone`, `sexo`) VALUES
-('2147483647', 'Euzin da silvia', 666, 'euzin@gmail.com', '2147483647', 'homem');
+('12345678900', 'Cinco Noites Com Eduardo', 'freddy', 'freddy@gmail.com', '12345678901', 'homem');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

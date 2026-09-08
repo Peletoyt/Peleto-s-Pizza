@@ -15,8 +15,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastrar <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="Aula7Cadastro.php">Usuários</a></li>
-                            <li><a href="Aula7Formulario.php">Clientes</a></li>
+                            <li><a href="#">---</a></li>
+                            <li><a href="#">---</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Sair</a></li>
