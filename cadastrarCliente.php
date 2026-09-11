@@ -3,18 +3,11 @@
 
 <head>
     <?php include("include/header.php"); ?>
-
     <title>Cadastrar Usuário</title>
 </head>
-
 <body class="body-cadastro">
-
     <div class="container-fluid">
-
-        <?php include("include/navbar.php"); ?>
-
         <form action="include/clienteBD.php" method="POST" class="form-cadastro">
-
             <img src="include/image/Fazbear_Entertainment.png" alt="Fazbear Entertainment" class="logo-cadastro">
             <label class="txt-init">
                 EMPLOYEE CREDENTIAL FORMS
@@ -288,14 +281,11 @@
                         interno da Fazbear Entertainment.
                     </small>
                 </p>
-
                 <input type="checkbox" name="checkbox" id="checkbox">Li os termos e vi as fitas de treinamento e aceito todos os riscos do cargo.
-
             </div>
             <button type="submit" class="btn btn-success">
                 Assinar Contrato e Concluir Cadastro
             </button>
-
         </form>
              <p class="text-center alert alert-warning">
                 Aviso Legal: Este documento é pura ficção, nada desses termos são reais.
@@ -305,10 +295,8 @@
     </div>
     <?php include("include/scripts.php"); ?>
 </body>
-
-<script>
-    const hoje = new Date();
-    document.getElementById('date').innerText = `Data: ${hoje.toLocaleDateString()}`;
-</script>
-
+    <script>
+        const hoje = new Date();
+        document.getElementById('date').innerText = `Data: ${hoje.toLocaleDateString()}`;
+    </script>
 </html>
