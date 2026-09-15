@@ -3,64 +3,90 @@ include('../config/config.php');
 
 $cpf = $_POST['cpf'];
 $nome = $_POST['nome'];
+$email = $_POST['email'];
+$telefone = $_POST['telefone'];
 $sexo = $_POST['sexo'];
+$senha = $_POST['senha'];
 
-if($cpf == ""){
+if ($cpf == "") {
     echo "CPF em branco!!";
     exit;
 }
-
-if($nome == ""){
+if ($nome == "") {
     echo "Nome em branco";
     exit;
 }
-
-if($sexo == ""){
+if ($email == "") {
+    echo "E-mail em branco";
+    exit;
+}
+if ($telefone == "") {
+    echo "Telefone em branco";
+    exit;
+}
+if ($sexo == "") {
     echo "Sexo em branco";
     exit;
 }
+if ($senha == "") {
+    echo "Senha em branco";
+    exit;
+}
 
-$sql_insert = "INSERT INTO clientes VALUES(:cpf, :nome, :sexo)";
+$sql_verifica = "SELECT * FROM user WHERE email = :email";
+
+$stmt = $PDO->prepare($sql_verifica);
+$stmt->bindParam(':email', $email);
+$stmt->execute();
+
+if ($stmt->fetch(PDO::FETCH_ASSOC)) {
+    header("Location: ../cadastrarCliente.php?erro=email");
+    exit;
+}
+
+$sql_verifica = "SELECT * FROM user WHERE cpf = :cpf";
+
+$stmt = $PDO->prepare($sql_verifica);
+$stmt->bindParam(':cpf', $cpf);
+$stmt->execute();
+
+if ($stmt->fetch(PDO::FETCH_ASSOC)) {
+    header("Location: ../cadastrarCliente.php?erro=cpf");
+    exit;
+}
+
+$sql_verifica = "SELECT * FROM user WHERE telefone = :telefone";
+
+$stmt = $PDO->prepare($sql_verifica);
+$stmt->bindParam(':telefone', $telefone);
+$stmt->execute();
+
+if ($stmt->fetch(PDO::FETCH_ASSOC)) {
+    header("Location: ../cadastrarCliente.php?erro=telefone");
+    exit;
+}
+
+$sql_insert = "INSERT INTO user 
+    (cpf, nome, senha, email, telefone, sexo)
+    VALUES 
+    (:cpf, :nome, :senha, :email, :telefone, :sexo)";
+
 $stmt = $PDO->prepare($sql_insert);
-$stmt->bindParam(':cpf',$cpf);
-$stmt->bindParam(':nome',$nome);
-$stmt->bindParam(':sexo',$sexo);
+
+$stmt->bindParam(':cpf', $cpf);
+$stmt->bindParam(':nome', $nome);
+$stmt->bindParam(':senha', $senha);
+$stmt->bindParam(':email', $email);
+$stmt->bindParam(':telefone', $telefone);
+$stmt->bindParam(':sexo', $sexo);
 
 $result = $stmt->execute();
 
-if(!$result){
-    echo '<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>Document</title>
-</head>
-<body>
-<div class="alert alert-danger" role="alert">
-  não deu certo
-</div>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</html>';
+if (!$result) {
+    header("Location: ../cadastrarCliente.php?erro=cadastro");
     exit;
-}else{
-    echo '<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>Document</title>
-</head>
-<body>
-    <div class="alert alert-success" role="alert">
-    Deu certo!
-</div>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</html>';
+} else {
+        header("Location: ../cadastrarCliente.php?successo=1");
+    exit;
 }
-
 ?>
