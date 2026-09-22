@@ -3,15 +3,43 @@ if (isset($_GET['erro'])) {
     if ($_GET['erro'] == 'email')
          {
         echo 
-        '<div class="alert alert-danger" role="alert"> E-mail já cadastrado
-        <a href="cadastrarCliente.php" class="alert-link">Ok</a>
-        </div>';}
-    if ($_GET['erro'] == 'cpf') echo '<script>alert("Esse CPF já está cadastrado!");</script>';
-    if ($_GET['erro'] == 'telefone') echo '<script>alert("Esse telefone já está cadastrado!");</script>';
-    if ($_GET['erro'] == 'cadastro') echo '<script>alert("Não foi possível realizar o cadastro!");</script>';
+        '<div class="alert alert-danger text-center" role="alert"> E-mail já cadastrado.
+        <a href="cadastrarCliente.php" class="alert-link">Click-me para continuar</a>
+        </div>';
+        }
+
+    if ($_GET['erro'] == 'cpf')
+        {
+        echo 
+        '<div class="alert alert-danger text-center" role="alert"> CPF já cadastrado
+        <a href="cadastrarCliente.php" class="alert-link">Click-me para continuar</a>
+        </div>';
+        }
+
+    if ($_GET['erro'] == 'telefone')
+        {
+        echo 
+        '<div class="alert alert-danger text-center" role="alert"> Telefone já cadastrado.
+        <a href="cadastrarCliente.php" class="alert-link">Click-me para continuar</a>
+        </div>';
+        }
+
+    if ($_GET['erro'] == 'cadastro')
+        {
+        echo 
+        '<div class="alert alert-danger text-center" role="alert"> Não foi possivel realizar o cadastro!
+        <a href="cadastrarCliente.php" class="alert-link">Click-me para continuar</a>
+        </div>';
+        }
 }
 
-if (isset($_GET['sucesso'])) echo '<script>alert("Cadastro realizado com sucesso!");</script>';
+if (isset($_GET['successo']) )
+    {
+    echo 
+    '<div class="alert alert-success text-center" role="alert"> Cadastro realizado com sucesso!
+    <a href="index.php" class="alert-link">Click-me para continuar</a>
+    </div>';
+    }
 ?>
 
 <!DOCTYPE html>

@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if (isset($_SESSION['usuario_nome'])) {
+    $nome = $_SESSION['usuario_nome'];
+    }
+else{
+    $nome = header('Location: login.php');
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -27,7 +40,7 @@
     <div class="poster-badge">NOVIDADE!</div>
     <h2 class="poster-heading">O LUGAR PERFEITO PARA SUA FESTA!</h2>
     <p class="poster-text">
-      Venha saborear nossas deliciosas pizzas, comemorar seu aniversário e assistir ao show inesquecível da nossa banda animatrônica!
+     Olá! <?php echo "<strong>$nome</strong>";?> Venha saborear nossas deliciosas pizzas, comemorar seu aniversário e assistir ao show inesquecível da nossa banda animatrônica!
     </p>
 
     <!-- Avisos e Pegadinhas de Lore no Pôster -->
@@ -92,6 +105,8 @@ function openMask() {
   phone_guy.addEventListener('click', () => {
     // colocar o trecho do audio(night 1) que fala o txt do slogan-tag
   });
+
+  //  console.log("Usuário logado: </*?php echo htmlspecialchars($nome, ENT_QUOTES, 'UTF-8');?>");
 </script>
 </html>
  
