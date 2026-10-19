@@ -19,7 +19,7 @@ else{
 </head>
 <body class="body-home">
     <!-- <?php include("include/navbar.php");?>  -->
-    <img src="include/image/mask_fnaf.webp" alt="maskFreddy" id="mask" class="mask">
+    <img src="include/image/background/mask_fnaf.webp" alt="maskFreddy" id="mask" class="mask">
 
 <main class="home">
   <!-- Luzes de neon e banner principal -->
@@ -36,7 +36,7 @@ else{
 
   <!-- Banner de Destaque / Pôster Retrô -->
   <section class="hero-poster">
-   <img src="include/image/logo-color.jpg" alt="logo-fazbear_entertainment" class="logo-badge" width="100px" onclick="openMask()">
+   <img src="include/image/logo/logo-color.jpg" alt="logo-fazbear_entertainment" class="logo-badge" width="100px" onclick="openMask()">
     <div class="poster-badge">NOVIDADE!</div>
     <h2 class="poster-heading">O LUGAR PERFEITO PARA SUA FESTA!</h2>
     <p class="poster-text">
@@ -77,7 +77,7 @@ else{
       <div class="card-tag">GALLERY</div>
       <h3>FANARTS</h3>
       <p>Desenhos, tributos e artes enviadas por nossos pequenos fãs e visitantes!</p>
-      <a href="#fanarts" class="promo-btn">VER GALERIA</a>
+      <a href="fanart.php" class="promo-btn">VER GALERIA</a>
     </div>
 
   </section>
@@ -106,7 +106,7 @@ function openMask() {
     // colocar o trecho do audio(night 1) que fala o txt do slogan-tag
   });
 
-  //  console.log("Usuário logado: </*?php echo htmlspecialchars($nome, ENT_QUOTES, 'UTF-8');?>");
+  console.log("Usuário logado: <?php echo htmlspecialchars($nome, ENT_QUOTES, 'UTF-8');?>");
 </script>
 </html>
  
